@@ -134,3 +134,15 @@ body {
 .delay-1000 {
   animation-delay: 1s;
 }
+
+/* Hide Next.js dev overlay and indicators */
+nextjs-portal,
+#__next-build-watcher,
+[data-nextjs-dialog],
+[data-nextjs-toast],
+[data-nextjs-router] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
