@@ -1,14 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Disable Next.js dev indicators and overlay
+  // Disable Next.js dev indicators (position only, buildActivity is always shown in dev)
   devIndicators: {
-    buildActivity: false,
     buildActivityPosition: "bottom-right",
   },
-  // Disable React error overlay in development
-  reactStrictMode: true,
   // Production optimizations
+  reactStrictMode: true,
   swcMinify: true,
 };
 
