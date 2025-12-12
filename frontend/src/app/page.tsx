@@ -1,104 +1,72 @@
 import Link from "next/link";
 
-const highlights = [
-  "JWT auth with protected dashboard",
-  "Profile management",
-  "Task CRUD with search & filters",
-  "Validation on client and server",
-];
-
 export default function Home() {
   return (
-    <main className="mx-auto flex min-h-screen max-w-5xl flex-col gap-10 px-6 py-12 md:px-12 lg:px-16">
-      <header className="flex items-center justify-between rounded-2xl border border-slate-200 bg-white/60 px-6 py-4 shadow-lg shadow-slate-200/60 backdrop-blur">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-widest text-indigo-600">
-            Frontend Developer Intern
-          </p>
-          <h1 className="text-2xl font-bold text-slate-900">
+    <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-indigo-50/30 to-purple-50/20">
+      <div className="floating-glow"></div>
+      <div className="floating-glow delay-150"></div>
+      <div className="floating-glow delay-300"></div>
+      
+      {/* Animated background shapes */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-gradient-to-br from-indigo-400/20 to-purple-400/20 blur-3xl animate-pulse-slow"></div>
+        <div className="absolute -bottom-40 -left-40 h-80 w-80 rounded-full bg-gradient-to-br from-blue-400/20 to-indigo-400/20 blur-3xl animate-pulse-slow delay-1000"></div>
+      </div>
+
+      <div className="relative z-10 flex flex-col items-center gap-8 px-6 py-16 text-center">
+        <div className="animate-fade-in group relative">
+          <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 opacity-20 blur group-hover:opacity-30 transition duration-300"></div>
+          <div className="relative rounded-full border border-indigo-200/50 bg-white/90 backdrop-blur-md px-6 py-3 text-xs font-bold uppercase tracking-[0.3em] text-indigo-600 shadow-lg">
+            ✨ Vaka Abhilesh
+          </div>
+        </div>
+        
+        <div className="space-y-4">
+          <h1 className="animate-slide-up bg-gradient-to-r from-slate-900 via-indigo-900 to-slate-900 bg-clip-text text-5xl font-extrabold text-transparent sm:text-6xl md:text-7xl">
             Secure Task Dashboard
           </h1>
+          <div className="animate-fade-in-delay mx-auto h-1 w-24 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500"></div>
         </div>
-        <div className="flex gap-3">
-          <Link href="/login" className="btn-secondary">
-            Login
+        
+        <p className="animate-fade-in-delay max-w-2xl text-lg text-slate-600 leading-relaxed">
+          Minimal and secure. Sign up, log in, and manage tasks behind a protected dashboard.
+        </p>
+        
+        <div className="animate-fade-in-delay-2 flex flex-wrap items-center justify-center gap-4">
+          <Link
+            href="/signup"
+            className="group relative overflow-hidden rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 px-8 py-4 font-semibold text-white shadow-lg shadow-indigo-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/60"
+          >
+            <span className="relative z-10">Get Started</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
           </Link>
-          <Link href="/signup" className="btn-primary">
-            Get Started
+          <Link
+            href="/login"
+            className="rounded-xl border-2 border-indigo-200 bg-white/80 px-8 py-4 font-semibold text-indigo-600 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-indigo-300 hover:bg-white hover:shadow-lg"
+          >
+            Sign In
           </Link>
         </div>
-      </header>
 
-      <section className="grid gap-6 rounded-3xl border border-slate-200 bg-gradient-to-br from-indigo-50 via-white to-slate-50 p-8 shadow-xl shadow-indigo-100/60 lg:grid-cols-[1.1fr_0.9fr]">
-        <div className="flex flex-col gap-4">
-          <p className="text-sm font-medium text-indigo-700">Assignment Ready</p>
-          <h2 className="text-4xl font-bold leading-tight text-slate-900">
-            Ship a production-style auth flow with a task dashboard in days, not
-            weeks.
-          </h2>
-          <p className="text-lg text-slate-600">
-            React + Next.js on the frontend, Express + Mongo on the backend, JWT
-            security, validation, and responsive UI with Tailwind.
-          </p>
-          <div className="mt-2 grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {highlights.map((item) => (
-              <div
-                key={item}
-                className="card flex items-center gap-3 px-4 py-3 text-sm font-semibold text-slate-800"
-              >
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 text-white">
-                  ✓
-                </span>
-                <span>{item}</span>
-              </div>
-            ))}
+        {/* Feature highlights */}
+        <div className="animate-fade-in-delay-2 mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
+          <div className="group rounded-2xl border border-indigo-100 bg-white/60 p-6 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-indigo-200 hover:bg-white/80 hover:shadow-lg">
+            <div className="mb-3 text-2xl">🔐</div>
+            <h3 className="mb-2 font-semibold text-slate-900">Secure Auth</h3>
+            <p className="text-sm text-slate-600">JWT-based authentication</p>
           </div>
-          <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/dashboard" className="btn-primary">
-              Open Dashboard
-            </Link>
-            <Link href="/login" className="btn-secondary">
-              View Auth
-            </Link>
+          <div className="group rounded-2xl border border-indigo-100 bg-white/60 p-6 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-indigo-200 hover:bg-white/80 hover:shadow-lg">
+            <div className="mb-3 text-2xl">📋</div>
+            <h3 className="mb-2 font-semibold text-slate-900">Task Management</h3>
+            <p className="text-sm text-slate-600">CRUD with search & filters</p>
+          </div>
+          <div className="group rounded-2xl border border-indigo-100 bg-white/60 p-6 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-indigo-200 hover:bg-white/80 hover:shadow-lg">
+            <div className="mb-3 text-2xl">⚡</div>
+            <h3 className="mb-2 font-semibold text-slate-900">Fast & Modern</h3>
+            <p className="text-sm text-slate-600">Built with Next.js & Tailwind</p>
           </div>
         </div>
-        <div className="card flex flex-col gap-3 p-6">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-600">
-                Demo Account
-              </p>
-              <p className="text-sm text-slate-600">
-                Use the forms to create your own user.
-              </p>
-            </div>
-            <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">
-              JWT Secured
-            </span>
-          </div>
-          <div className="grid gap-2 text-sm text-slate-700">
-            <div className="flex items-center justify-between rounded-xl bg-slate-50 px-4 py-3">
-              <span className="font-semibold text-slate-900">Profile</span>
-              <span className="text-slate-600">Name, email, timestamps</span>
-            </div>
-            <div className="flex items-center justify-between rounded-xl bg-slate-50 px-4 py-3">
-              <span className="font-semibold text-slate-900">
-                Tasks CRUD + Search
-              </span>
-              <span className="text-slate-600">Filters & status chips</span>
-            </div>
-            <div className="flex items-center justify-between rounded-xl bg-slate-50 px-4 py-3">
-              <span className="font-semibold text-slate-900">Secure API</span>
-              <span className="text-slate-600">Express + Mongo + Zod</span>
-            </div>
-          </div>
-          <div className="mt-4 rounded-xl border border-dashed border-indigo-200 bg-indigo-50/50 px-4 py-3 text-xs text-indigo-700">
-            Tip: configure <code className="font-mono">NEXT_PUBLIC_API_URL</code>{" "}
-            to point at the backend. Defaults to{" "}
-            <code className="font-mono">http://localhost:4000</code>.
-          </div>
-        </div>
-      </section>
+      </div>
     </main>
   );
 }
