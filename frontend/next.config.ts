@@ -1,9 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Disable Next.js dev indicators (position only, buildActivity is always shown in dev)
+  // Dev indicator position (cannot fully disable overlay via config)
   devIndicators: {
-    buildActivityPosition: "bottom-right",
+    position: "bottom-right",
   },
   // Production optimizations
   reactStrictMode: true,
